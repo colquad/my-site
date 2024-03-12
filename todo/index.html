@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List Creator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+	</div>
+    
+    <div class="container">
+        <h1>My To-Do List</h1>
+        <div id="task-container">
+            <input type="text" id="task-input" placeholder="Add a new task">
+            <select id="priority-select">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+                <input type="date" id="due-date">
+                <button onclick="addTask()">Add Task</button>
+                <label for="filter-select">Filter by Priority:</label>
+            <select id="filter-select" onchange="filterTasks()">
+                <option value="all">All</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+        <ul id="task-list"></ul>
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+    </footer>
+    
+    <script>
+        $(function(){
+    		$("#nav-placeholder").load("/src/nav5.html");
+    	});
+        const priorities = {
+            low: "Low",
+            medium: "Medium",
+            high: "High"
+        };
+
+        const taskList = document.getElementById("task-list");
+        const prioritySelect = document.getElementById("priority-select");
+        const dueDateInput = document.getElementById("due-date");
+        const filterSelect = document.getElementById("filter-select");
+        
+        function addTask() {
+            const taskInput = document.getElementById("task-input");
+        
+            if (taskInput.value.trim() === "") {
+                alert("Please enter a task!");
+                return;
+            }
+        
+            const taskText = document.createTextNode(taskInput.value);
+            const listItem = document.createElement("li");
+            const deleteButton = document.createElement("button");
+            const prioritySpan = document.createElement("span");
+            const dueDateSpan = document.createElement("span");
+        
+            const priorityValue = prioritySelect.value;
+            const dueDateValue = dueDateInput.value;
+        
+            listItem.appendChild(taskText);
+            listItem.appendChild(prioritySpan);
+            listItem.appendChild(dueDateSpan);
+            listItem.appendChild(deleteButton);
+        
+            prioritySpan.innerHTML = `Priority: ${priorities[priorityValue]}`;
+            dueDateSpan.innerHTML = dueDateValue ? ` | Due Date: ${dueDateValue}` : "";
+        
+            deleteButton.innerHTML = "Delete";
+            deleteButton.onclick = function () {
+                taskList.removeChild(listItem);
+                filterTasks(); // Update the task list after deletion
+            };
+        
+            listItem.classList.add(priorityValue); // Add class for styling based on priority
+            taskList.appendChild(listItem);
+            taskInput.value = "";
+        
+            filterTasks(); // Update the task list after addition
+        }
+        
+        function filterTasks() {
+            const selectedPriority = filterSelect.value;
+        
+            Array.from(taskList.children).forEach(task => {
+                const taskPriority = task.classList[1]; // Assumes priority class is the second class added
+                if (selectedPriority === "all" || selectedPriority === taskPriority) {
+                    task.style.display = "flex";
+                } else {
+                    task.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

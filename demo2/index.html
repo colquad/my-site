@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 2</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+	</div>
+    <br>
+    
+    <div>
+        <nav>
+            <a href="/demo1">1st Demo Webpage</a> |
+            <a href="/demo3">3rd Demo Webpage</a> |
+            <a href="/assignment1">Back to Assignment Page</a>
+        </nav>
+    </div>
+    <br>
+    
+    <aside>
+        <a href="https://www.mlb.com/">Major League Baseball's Website!</a>
+    </aside>
+    
+    <header>
+        <h1>
+            Baseball
+        </h1>
+    </header>
+        
+    <div>
+        <h2>
+            About the Sport
+        </h2>
+        <p>
+            Baseball is a bat-and-ball sport played between two teams of nine players each, taking turns batting and fielding. The game occurs over the course of several plays, 
+            with each play generally beginning when a player on the fielding team, called the pitcher, throws a ball that a player on the batting team, called the batter, tries to hit with a bat.
+            A run is scored when a runner crosses home plate.
+        <p>
+    </div>
+    
+    <a href="#pics">Click here to see some pictures!</a>
+    
+    <div>
+        <h2>My Experience with Baseball</h2>
+        <p>
+            I played baseball for most of my life from when I was in t-ball all the way up into high school. I played rec ball, travel ball, and school ball. It was always one of
+            my favorite sports to play and I always love watching it as well.
+        </p>
+    </div>
+    
+    <br> <br> <br> <br> <br> <br> <br> <br>
+    
+    <div id="pics" class="img-container">
+        <img src="../src/baseball2.png">
+        <img src="../src/baseball1.png">
+        <img src="../src/baseball3.jpg">
+        <img src="../src/baseball4.jpg">
+    </div>
+    <br> <br> <br>
+    
+    <footer>
+        <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+    </footer>
+    
+    <script>
+    	$(function(){
+    		$("#nav-placeholder").load("/src/nav2.html");
+    	});
+</script>
+</body>
+</html>

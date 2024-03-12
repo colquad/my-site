@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Group Assignment</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    
+    <h1>Audio</h1>
+    <h2>Demonstration of the HTML DOM Audio Object</h2><br>
+    
+    <div id="audiodiv">
+        <audio id="myAudio" controls>
+          <source src="../src/audio.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+    </div> <br><br>
+    
+    <button onclick="duration()">Click me to see the duration of the audio, in seconds</button>
+    <p id="durationDemo"></p>
+    
+    <button onclick="getTime()">Click me to see the current time of the audio, in seconds</button>
+    <p id="currTimeDemo"></p>
+    
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("/src/nav3.html");
+        });
+        
+        function duration() {
+          var x = document.getElementById("myAudio").duration;
+          document.getElementById("durationDemo").innerHTML =  `Duration: ${x}`;;
+        }
+        
+        function getTime() {
+            var x = document.getElementById("myAudio").currentTime;
+            document.getElementById("currTimeDemo").innerHTML =  `Current Time: ${x}`;;
+        }
+    </script>
+</body>
+</html>

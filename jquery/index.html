@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Demo</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+
+        <script>
+            $(document).ready(function(){
+                $("#div1").hover( 
+                    function () { 
+                        $(this).css('background-color', 'yellow'),
+                        $(this).css('color', 'black')
+                    }, 
+                    function () { 
+                        $(this).css('background-color', 'white')
+                    }
+                );
+                
+                $("#div2").hover( 
+                    function () { 
+                        $(this).css('background-color', 'yellow'),
+                        $(this).css('color', 'black')
+                    }, 
+                    function () { 
+                        $(this).css('background-color', 'white')
+                    }
+                );
+                
+                $("#div3").hover( 
+                    function () { 
+                        $(this).css('background-color', 'yellow'),
+                        $(this).css('color', 'black')
+                    }, 
+                    function () { 
+                        $(this).css('background-color', 'white')
+                    }
+                );
+                
+                $("#fadeDiv1").click(function(){
+                    $("#div1").fadeOut();
+                });
+                $("#fadeDiv2").click(function(){
+                    $("#div2").fadeOut();
+                });
+                $("#fadeDiv3").click(function(){
+                    $("#div3").fadeOut();
+                });
+                
+                
+                $("#myDatePicker").datepicker();
+                
+                $("#accordion").accordion();
+                
+                $("#progressbar").progressbar({
+                    value: 0,
+                    create: function(event, ui) {$(this).find('.ui-widget-header').css({'background-color':'lime'})}
+                });
+                let barVal = 0;
+                setInterval(function(){
+                    if (barVal < 100) {
+                      barVal += 5;
+                      $("#progressbar").progressbar('value', barVal);
+                    }
+                }, 1000);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="nav-placeholder"></div>
+        
+        <h1>JQuery Demo</h1>
+        <h2>Discover different uses of JQuery with this simple demo site!</h2>
+        
+        <p>This is a paragraph.</p>
+        
+        <div id="div1" style="border: 1px solid black;">
+          <p>A paragraph in a div.</p>
+          <p>Another paragraph in a div.</p>
+        </div>
+        <br>
+        
+        <div id="div2" style="border: 1px solid black;">
+          <p>A paragraph in another div.</p>
+          <p>Another paragraph in another div.</p>
+        </div>
+        <br>
+        
+        <div id="div3" style="border: 1px solid black;">
+          <p>A paragraph in another div.</p>
+          <p>Another paragraph in another div.</p>
+        </div>
+        
+        <button id="fadeDiv1">Fade Div 1</button>
+        <button id="fadeDiv2">Fade Div 2</button>
+        <button id="fadeDiv3">Fade Div 3</button>
+        
+        <br><br><br>
+        
+        <p>Date: <input type="text" id="myDatePicker"></p>
+        
+        <br><br><br>
+        
+        <div id="accordion">
+            <h3>Section 1</h3>
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet
+                </p>
+            </div>
+            <h3>Section 2</h3>
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet
+                </p>
+            </div>
+            <h3>Section 3</h3>
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet
+                </p>
+            </div>
+        </div>
+        
+        <br><br><br>
+        
+        <div id="progressbar"></div>
+        
+        <br><br><br>
+        
+        <footer>
+            <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+        </footer>
+        
+        <script>
+            $(function(){
+              $("#nav-placeholder").load("/src/nav2.html");
+            });
+        </script>
+    </body>
+</html>

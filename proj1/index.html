@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Changer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="proj1.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    <br><br>
+    
+    <h1>Navigate through this audio file of me playing guitar!</h1>
+    
+    <div class="container">
+        <div class="controller">
+            <audio id="audio" src="guitar.mp3"></audio>
+            <div id="audioFile"></div>
+            <div id="currentTime">0:00</div>
+            <br>
+            <button id="rewind" onclick="rewind()">Rewind 5s</button>
+            <button id="pause" onclick="playPause()">Play</button>
+            <button id="forward" onclick="fastForward()">Forward 5s</button>
+            <br><br>
+            <button onclick="addTitle()">Add New Title</button>
+            <button onclick="removeTitle()">Remove Current Title</button>
+            <br><br>
+        </div>
+    
+        <div class="titles-container">
+            <h3>Timestamps</h3>
+            <ul id="titles"></ul>
+        </div>
+    </div>
+    
+    <script>
+        getInfo();
+        var titles = [
+            { title: "Blackbird", time: 0 },
+            { title: "Another Day", time: 27 },
+            { title: "Jet", time: 54 },
+            { title: "Across the Universe", time: 81 },
+            { title: "I Am the Walrus", time: 128 },
+            { title: "Something", time: 204 },
+            { title: "Here Comes the Sun", time: 234 },
+            { title: "I'm Looking Through You", time: 265 },
+            { title: "I Will (rough)", time: 291 },
+        ];
+        showTitles();
+    </script>
+</body>
+</html>

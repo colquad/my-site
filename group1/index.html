@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://dillonfbrown.com/GroupWork/GroupCSS1/GroupCSS1.html -->
+<html lang="en"><!-- CSS Demonstration Assignment Group 4--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="module" id="truffle-injected" data-runtime="bkkjeefjfjcfdfifddmkdmcpmaakmelp" src="chrome-extension://bkkjeefjfjcfdfifddmkdmcpmaakmelp/contexts/all/injected-script/index.js"></script>
+  <title>CSS Group 4</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* background color of whole page*/
+    body {
+      background-color: linen;
+    }
+
+    #div1 {
+      background: rgba(255, 0, 0, 0.3);
+    }
+
+    #div2 {
+      background: black;
+      color: white;
+    }
+
+    #div4 {
+      border-top-style: solid;
+      border-right-style: double;
+      border-bottom-style: dashed;
+      border-left-style: dotted;
+      border-width: 2px 5px 10px 2px;
+      border-top-color: red;
+      border-right-color: blue;
+      border-left-color: green;
+      border-bottom-color: yellow;
+      padding: 15px;
+    }
+
+    #div3 {
+      background-image: url("background.jpeg");
+      color: white;
+    }
+
+    #div7 {
+      background-image: url("background.jpeg");
+      color: white;
+      background-attachment: fixed;
+      background-size: contain;
+    }
+
+    #div5 {
+      border: 2px solid black;
+      border-radius: 25px;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      margin-right: 700px;
+      margin-left: 100px;
+    }
+
+    #div6 {
+      background-color: green;
+      height: 500px;
+      width: 500px;
+      color: white;
+      margin-left: 500px;
+    }
+
+    /*makes text more visible over images, white text with black highlight*/
+    .highlight {
+      background-color: black;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <header style="background-color: lightgray; height:75px;">
+    <h1>CSS Demonstration Group 4</h1>
+  </header>
+
+  <section>
+    <!-- red background -->
+    <div id="div1">
+      <p>This section has an opaque red background.</p>
+    </div>
+    <!-- black background -->
+    <div id="div2">
+      <p>This one has a black background with white text.</p>
+    </div>
+    <!-- clemson background -->
+    <div id="div3">
+      <div>
+        <h2 class="highlight">This has clemson as a background.</h2>
+      </div>
+      <div>
+        <p class="highlight">C-L-E-M-S-O-...-N!</p>
+      </div>
+      <div>
+        <p class="highlight">Go Tigers!</p>
+      </div>
+    </div>
+    <!-- clemson non-repeating background -->
+    <div id="div3" style="background-repeat: no-repeat;">
+      <div>
+        <h2 class="highlight">This also has clemson as a background.</h2>
+      </div>
+      <div>
+        <p class="highlight">But this one does not repeat.</p>
+      </div>
+      <div>
+        <p class="highlight">Go Tigers!</p>
+      </div>
+    </div>
+    <!-- clemson fixed background -->
+    <div id="div7" style="background-repeat: no-repeat;">
+      <div>
+        <h2 class="highlight">This also has clemson as a background.</h2>
+      </div>
+      <div>
+        <p class="highlight">But this one is fixed, and will not move with the page.</p>
+      </div>
+      <div>
+        <p class="highlight">Go Tigers!</p>
+      </div>
+    </div>
+    <!-- fun border -->
+    <div id="div4">
+      <div>
+        <h2>This area has an interesting border.</h2>
+      </div>
+      <div>
+        <p>Each side is a different color, width, and style.</p>
+      </div>
+    </div>
+    <!-- margins and padding -->
+    <div id="div5">
+      <p>This section has a right margin of 700px to keep it away from the right of the page.</p>
+      <p>It also has 100px of left margin to keep it from the left of the page.</p>
+      <p>It also has a nice simple curved border with 100px of top and bottom padding to seperate it from the other
+        sections.</p>
+    </div>
+    <!-- height and width -->
+    <div id="div6">
+      <p>This section has a height and width of 500px with a green background and white text.</p>
+    </div>
+  </section>
+
+  <footer style="background-color: lightgray; height: 50px;">
+    <h2>This is a footer!</h2>
+  </footer>
+
+
+
+</body></html>

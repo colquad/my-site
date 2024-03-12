@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    <br><br>
+    
+    <button id="r" class="colorButton">RED</button>
+    <div id="redCount">
+        <p>RED COUNT: 0</p>
+    </div>
+    <div id="redSwap">
+        <p>RED SWAP COUNT: 0</p>
+    </div>
+    <br>
+
+    <button id="g" class="colorButton">GREEN</button>
+    <div id="greenCount">
+        <p>GREEN COUNT: 0</p>
+    </div>
+    <div id="greenSwap">
+        <p>GREEN SWAP COUNT: 0</p>
+    </div>
+    <br>
+
+    <button id="b" class="colorButton">BLUE</button>
+    <div id="blueCount">
+        <p>BLUE COUNT: 0</p>
+    </div>
+    <div id="blueSwap">
+        <p>BLUE SWAP COUNT: 0</p>
+    </div>
+    
+    
+    <script>
+        $(function(){
+        	$("#nav-placeholder").load("/src/nav2.html");
+        });
+        let redInc = 0;
+        let greenInc = 0;
+        let blueInc = 0;
+        let redSwap = 0;
+        let greenSwap = 0;
+        let blueSwap = 0;
+
+        const colorButtons = document.querySelectorAll('.colorButton');
+        const redCount = document.getElementById('redCount');
+        const greenCount = document.getElementById('greenCount');
+        const blueCount = document.getElementById('blueCount');
+
+        colorButtons.forEach(button => {
+            button.addEventListener('mouseover', function() {
+                swapColors(button.id);
+            });
+
+            button.addEventListener('click', function() {
+                switch (button.id) {
+                    case 'r':
+                        redInc++;
+                        redCount.innerHTML = `<p>RED COUNT: ${redInc}<p>`;
+                        document.body.style.backgroundColor = "red";
+                        break;
+                    case 'g':
+                        greenInc++;
+                        greenCount.innerHTML = `<p>GREEN COUNT: ${greenInc}<p>`;
+                        document.body.style.backgroundColor = "green";
+                        break;
+                    case 'b':
+                        blueInc++;
+                        blueCount.innerHTML = `<p>BLUE COUNT: ${blueInc}<p>`;
+                        document.body.style.backgroundColor = "blue";
+                        break;
+                    default:
+                        break;
+                }
+            });
+        });
+
+        function swapColors(buttonColor) {
+            const button = document.getElementById(buttonColor);
+            const getStyle = window.getComputedStyle(button);
+            button.style.backgroundColor = getStyle.color;
+            button.style.color = getStyle.backgroundColor;
+            switch (buttonColor) {
+                case 'r':
+                    redSwap++;
+                    document.getElementById('redSwap').innerHTML = `<p>RED SWAP COUNT: ${redSwap}<p>`;
+                    break;
+                case 'g':
+                    greenSwap++;
+                    document.getElementById('greenSwap').innerHTML = `<p>GREEN SWAP COUNT: ${greenSwap}<p>`;
+                    break;
+                case 'b':
+                    blueSwap++;
+                    document.getElementById('blueSwap').innerHTML = `<p>BLUE SWAP COUNT: ${blueSwap}<p>`;
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

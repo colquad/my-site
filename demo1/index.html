@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 1</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    <br>
+    
+    <div>
+        <nav>
+            <a href="/demo2">2nd Demo Webpage</a> |
+            <a href="/demo3">3rd Demo Webpage</a> |
+            <a href="/assignment1">Back to Assignment Page</a>
+        </nav>
+    </div>
+    <br>
+    <aside>
+        <a href="https://www.minecraft.net/en-us">Minecraft's Website!</a>
+    </aside>
+    
+    <header>
+        <h1>
+            Minecraft
+        </h1>
+    </header>
+        
+    <div>
+        <h2>
+            About the Game
+        </h2>
+        <p>
+            Minecraft is an open world 3D sandbox game that was released in 2009. It's a world made of blocks where the only limit is your imagination. The game takes on an old fashioned look,
+            using 16-bit textures reminiscent of a Super Nintendo game. The title explains the game pretty well, as you mine and also craft. You are placed in this world and you gather resources, 
+            craft tools, fight off monsters, and build whatever you want.
+        <p>
+    </div>
+    
+    <a href="#pics">Click here to see some pictures!</a>
+    
+    <div>
+        <h2>My Experience with Minecraft</h2>
+        <p>
+            I have played Minecraft for most of my life and I can say that it has always been my favorite game.
+            I may not play it all the time like I used to, but I always find myself coming back to the game every so often,
+            and reliving those good ol' days again. Usually these random spurts of getting back into Minecraft only last
+            a couple of weeks, but I have lots of fun in the short time that I have back in the magical cube world.
+        </p>
+    </div>
+    
+    <br> <br> <br> <br> <br> <br> <br> <br>
+    
+    <div id="pics" class="img-container">
+        <img src="../src/minecraft1.jpg">
+        <img src="../src/minecraft2.png">
+        <img src="../src/minecraft3.png">
+        <img src="../src/minecraft4.png">
+    </div>
+    <br> <br> <br>
+    
+    <footer>
+        <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+    </footer>
+    
+    <script>
+        $(function(){
+        	$("#nav-placeholder").load("/src/nav2.html");
+        });
+</script>
+</body>
+</html>

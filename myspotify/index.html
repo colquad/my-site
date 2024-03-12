@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Spotify Playlist</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <div id="nav-placeholder">
+	</div>
+    
+    <h1>My Spotify Playlist</h1>
+    <h1>UNDER CONSTRUCTION</h1>
+    <h2>With this program you are able to list your most recently played Spotify songs as well as create a new playlist that contains all of those songs!</h2>
+    <button class="button" id="loginBtn">Log in to Spotify</button>
+    <div id="playlistNameContainer" style="display:none;">
+        <label for="playlistName">Enter Playlist Name:</label>
+        <input type="text" id="playlistName" required><br><br>
+        <label for="playlistDesc">Enter Playlist Description:</label>
+        <input type="text" id="playlistDesc" required>
+    </div><br>
+    <button class="button" id="createPlaylistBtn" style="display:none;">Create Playlist</button>
+    <div id="tracks"></div>
+    
+    <br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+    </footer>
+
+    <script src="spotify.js"></script>
+</body>
+</html>

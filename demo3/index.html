@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 3</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+	</div>
+    <br>
+    
+    <div>
+        <nav>
+            <a href="/demo1">1st Demo Webpage</a> |
+            <a href="/demo2">2nd Demo Webpage</a> |
+            <a href="/assignment1">Back to Assignment Page</a>
+        </nav>
+    </div>
+    <br>
+    
+    <aside>
+        <a href="https://www.clemson.edu/index.html">Clemson's Website!</a>
+    </aside>
+    
+    <header>
+        <h1>
+            Clemson University
+        </h1>
+    </header>
+        
+    <div>
+        <h2>
+            About the School
+        </h2>
+        <p>
+            Clemson University is a public land-grant research university in Clemson, South Carolina. Founded in 1889, Clemson is the second-largest university by enrollment in South Carolina.
+        <p>
+    </div>
+    
+    <a href="#pics">Click here to see some pictures!</a>
+    
+    <div>
+        <h2>My Experience with Clemson</h2>
+        <p>
+            This is my fourth and final year at Clemson University. I loved this campus as soon as I stepped foot onto it. Everything about this school is great: the campus, the students, the sports, etc.
+            The list just goes on and on. I'll be sad to leave this Spring but I'm glad to have spent the last 4 years here and I'm thankful for the education I received.
+        </p>
+    </div>
+    
+    
+    <br> <br> <br> <br> <br> <br> <br> <br>
+    
+    <div id="pics" class="img-container">
+        <img src="../src/clemson2.jpg">
+        <img src="../src/clemson1.png">
+        <img src="../src/clemson3.jpg">
+        <img src="../src/clemson4.jpg">
+    </div>
+    <br> <br> <br>
+    
+    <footer>
+        <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+    </footer>
+    
+    <script>
+    	$(function(){
+    		$("#nav-placeholder").load("/src/nav2.html");
+    	});
+</script>
+</body>
+</html>

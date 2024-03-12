@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Program Exam 1</title>
+    <link rel="stylesheet" href="prime.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="prime.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    
+    <br><br><br><br>
+    
+    <h1>Programming Exam #1</h1>
+    
+    <div>
+        <input type="number" id="input" min="0" placeholder="Enter any number" required> <br><br>
+        <button id="start" onclick="findNums()">START</button>
+    </div>
+    
+    <div class="container">
+        <div id="primeNums"></div>
+        <div id="regNums"></div>
+    </div>
+    
+    <div class="container">
+        <div id="sumPrimeNums"></div>
+        <button onclick="getSum('primeNums')">SUM</button>
+        <button onclick="getSum('regNums')">SUM</button>
+        <div id="sumRegNums"></div>
+    </div>
+    
+    <br><br><br><br>
+    
+    <footer>
+        <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+    </footer>
+    
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("/src/nav4.html");
+        });
+    </script>
+</body>
+</html>

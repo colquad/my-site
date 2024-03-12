@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Displaying Keypresses</title>
+        <link rel="stylesheet" href="styles.css">
+        
+        <script type="text/javascript">
+            function displayKey(e) {
+               // which key was pressed?
+               if (e.keyCode) {
+                  var keycode=e.keyCode;
+               }  else {
+                  var keycode=e.which;
+               }
+               character=String.fromCharCode(keycode);
+               
+               // display vowels as UPPERCASE
+               if (character == 'a' || character == 'e' || character == 'i' || character == 'o' || character == 'u') {
+                   character = character.toUpperCase();
+               }
+               
+               // change background color for red/green/blue
+               if (character == 'r' || character == 'R') {
+                   document.body.style.backgroundColor = 'red';
+               }
+               if (character == 'g' || character == 'G') {
+                   document.body.style.backgroundColor = 'green';
+               }
+               if (character == 'b' || character == 'B') {
+                   document.body.style.backgroundColor = 'blue';
+               }
+               
+               // find the object for the destination paragraph
+               var keysParagraph = document.getElementById('keys');
+            
+               // add the character to the paragraph
+               keysParagraph.innerHTML += character;
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    
+    <body onkeypress="displayKey(event)">
+        <div id="nav-placeholder">
+        </div>
+        <br><br><br><br>
+        
+        <h1>Displaying Typed Characters</h1>
+        <h2>Start typing and see how what you type is displayed!</h2>
+        
+        <div id="keys"></div>
+        <br><br><br><br>
+        
+        <footer>
+            <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+        </footer>
+        
+        
+        
+        <script>
+            $(function(){
+              $("#nav-placeholder").load("/src/nav2.html");
+            });
+        </script>
+    </body>
+</html>

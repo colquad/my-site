@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Business Card Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="card.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    
+    <div class = heading>
+        <h1>Dynamic Business Cards</h1>
+        <h2>A Demo of Javascript Events</h2>
+        <ul>
+            <li>Add a new card by pressing 'Submit'</li>
+            <li>Display all cards</li>
+        </ul>
+    </div>
+    <div class = main>
+        <div class = forms>
+          <h1>Information Form</h1>
+            <form>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required><br>
+            
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Your email" required><br>
+            
+              <label for="address">Address:</label>
+              <input type="text" id="address" name="address" placeholder="Your address" required><br>
+            
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" name="phone" placeholder="Your phone #" required><br>
+            
+              <label for="birthdate">Birth Date:</label>
+              <input type="date" id="birthdate" name="birthdate" required><br>
+            
+              <button type="button" onclick="createCard()">Create Card</button>
+            </form>
+        </div>
+        
+        <div class = cards>
+          <h1>Business Cards</h1>
+          <button type="button" onclick="printCard()">Display All Cards</button>
+          <div id="output"></div>
+        </div>
+    </div>
+    <br>
+    
+    <footer>
+        <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+    </footer>
+    
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("/src/nav2.html");
+        });
+    </script>
+</body>
+</html>

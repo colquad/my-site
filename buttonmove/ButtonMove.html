@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moving Buttons</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    <br>
+    
+    <h1>Moving Buttons!</h1>
+    <h2>Create colored buttons and make them move about the area. Clicking them will add to the sum and can change their color!</h2>
+    
+    <div id="options">
+        <label for="colorSelect">Select Color:</label>
+        <select id="colorSelect">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+            <option value="white">White</option>
+        </select>
+        <button id="makeButton" onclick="createButton()">Make Button</button>
+        <button id="moveButton" onclick="toggleMove()">Move!</button>
+    </div>
+    <div id="total">Total: 0</div>
+    <div id="viewingArea"></div>
+    <br><br><br><br><br>
+    
+    <footer>
+        <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+    </footer>
+    <script type="text/javascript" src="buttons.js"></script>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("/src/nav2.html");
+        });
+    </script>
+</body>
+</html>

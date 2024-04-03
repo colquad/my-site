@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Classifier</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    
+    <div class="container">
+        <div class="controller">
+            <form id="numberForm" action="process.php" method="post">
+                <label for="numbers">Enter numbers separated by commas:</label>
+                <input type="text" id="numbers" name="numbers">
+                <button type="submit" name="action" value="check">CHECK THESE NUMBERS</button>
+            </form>
+        
+            <button onclick="fetchResults('armstrong')">ARMSTRONG</button>
+            <button onclick="fetchResults('fibonacci')">FIBONACCI</button>
+            <button onclick="fetchResults('prime')">PRIME</button>
+            <button onclick="fetchResults('none')">NONE</button>
+            <button onclick="reset()">RESET</button>
+        </div>
+    
+        <div id="results" class="numbers-container"></div>
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+    <footer>
+        <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+    </footer>
+
+
+    <script>
+        $(function(){
+            $("#nav-placeholder").load("/src/nav2.html");
+        });
+        
+        function fetchResults(type) {
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function() {
+                document.getElementById('results').innerHTML = this.responseText;
+            };
+            xhr.open('POST', 'process.php');
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.send('action=view&type=' + type);
+        }
+
+        function reset() {
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function() {
+                document.getElementById('results').innerHTML = 'Files reset.';
+            };
+            xhr.open('POST', 'process.php');
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.send('action=reset');
+        }
+    </script>
+</body>
+</html>

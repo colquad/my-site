@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Collection App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <!-- nav bar placeholder -->
+    <div id="nav-placeholder">
+    </div> <br>
+    
+    <h1>Book Collect App</h1>
+    
+    <!-- navigation menu to other parts of the app -->
+    <nav>
+        <ul>
+            <li><a href="about.html">ABOUT</a></li>
+            <li>|</li>
+            <li><a href="stats.html">STATS</a></li>
+        </ul>
+    </nav> <br><br>
+    
+    <!-- search section of the app -->
+    <div id="search-section">
+        <!-- dropdown menu for selecting what you would like to search by -->
+        <select id="search-type">
+            <option value="q">Title</option>
+            <option value="author">Author</option>
+            <option value="subject">Subject</option>
+        </select>
+        
+        <input type="text" id="search-box" placeholder="Search for books..."> <br>
+
+        <!-- button to actually initiate the search and make the api call -->
+        <button id="search" onclick="searchBooks()">Search</button>
+    </div>
+    
+    <!-- section to display search results as a grid -->
+    <div id="results-section" class="grid"></div>
+    
+    <!-- additional book info modal -->
+    <div id="book-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <img id="book-image" src="" alt="Book cover">
+            <h2 id="book-title"></h2>
+            <p id="book-author"></p>
+            <p id="book-year"></p>
+        </div>
+    </div>
+
+    <br><br><br>
+    
+    <!-- footer section with contact information -->
+    <footer>
+        <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+    </footer>
+    
+    
+    
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("/src/nav2.html");
+        });
+    </script>
+</body>
+</html>

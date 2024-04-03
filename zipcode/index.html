@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AJAX Live Search Example</title>
+    <link rel="stylesheet" href="../../nav.css" />
+    <link rel="stylesheet" href="ZipCode.css" />
+    <script type="text/javascript" src="ajax.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="ZipCode.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    <section id="body">
+        <div id="bigdiv">
+            <div id="mainsound">
+                <h1 id="title">Zip Code Entry</h1><br />
+                <div class="zipentry"><label>Zip Code 1: </label><input type="text" id="zipcode1"></div>
+                <div class="zipentry"><label>Zip Code 2: </label><input type="text" id="zipcode2"></div>
+                <button id="searchbutton" onclick="runphp()">Enter</button>
+                <br>
+                <label for="debug" >Debug info? </label>
+                <input type="checkbox" id="debug" onclick="toggledebug()">
+            </div>
+            <div id="subcontainer">
+                <div id="dividers">
+                    <h2 id="bmtitle">Zip Code Information</h2>
+                </div>
+                <div id="distancediv" class="adddivider">
+                    <p id="distance">[Distance]</p>
+                </div>
+                <div id="z1div" class="adddivider">
+                    <p id="z1">[Zip Code 1 Information]</p>
+                </div>
+                <div id="z2div" class="adddivider">
+                    <p id="z2">[Zip Code 2 Information]</p>
+                </div>
+            </div>
+        </div>
+        <div id="bigdiv2">
+            <div id="mainsound2">
+                <h1 id="title2">Debug Info</h1><br />
+                <h3>Zip data file first row (column names): </h3>
+                <p id="debugreadfile"></p>
+                <hr>
+                <h3>All zip code info: </h3>
+                <p id="debugzipinfo"></p>
+                <hr>
+                <h3>Distance calculation: </h3>
+                <p id="debugdistance"></p>
+                <hr>
+                <h3>Similar tool: </h3>
+                <a href="https://andrew.hedges.name/experiments/haversine/">Andrew Hedges</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p style="font-size: large;">Distances Between Zip Codes</p>
+    </footer>
+    
+    <script>
+        $(function(){
+            $("#nav-placeholder").load("/src/nav3.html");
+        });
+    </script>
+</body>
+
+</html>

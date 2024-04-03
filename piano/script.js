@@ -1,7 +1,3 @@
-$(function(){
-    $("#nav-placeholder").load("/src/nav5.html");
-});
-
 const C = new Audio("keys/C.mp3");
 const Db = new Audio("keys/Db.mp3");
 const D = new Audio("keys/D.mp3");

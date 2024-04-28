@@ -47,6 +47,18 @@ function showBookDetails(book) {
     document.getElementById('book-author').textContent = `Author(s): ${book.author_name ? book.author_name.join(', ') : 'Unknown'}`;
     document.getElementById('book-year').textContent = `Publish Year: ${book.first_publish_year || 'Unknown'}`;
     
+    // Check if the Add to Favorites button already exists
+    let addButton = document.getElementById('add-to-favorites-button');
+    if (!addButton) {
+        addButton = document.createElement('button');
+        addButton.id = 'add-to-favorites-button';
+        addButton.textContent = 'Add to Favorites';
+        document.querySelector('.modal-content').appendChild(addButton);
+    }
+    
+    // Update the onclick event every time a new book is shown
+    addButton.onclick = () => addToFavorites(book);
+
     // make the modal visible
     document.getElementById('book-modal').style.display = 'block';
 }
@@ -62,4 +74,27 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = 'none';
     }
+}
+
+function addToFavorites(book) {
+    const bookDetails = {
+        title: book.title,
+        author: book.author_name ? book.author_name.join(', ') : 'Unknown',
+        cover_id: book.cover_i,
+        publish_year: book.first_publish_year
+    };
+
+    fetch('add_to_favorites.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bookDetails)
+    })
+    .then(response => response.json())
+    .then(result => {
+        alert(result.message);
+        closeModal();
+    })
+    .catch(error => console.error('Error adding book to favorites: ', error));
 }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PHP Form Example</title>
+    <link rel="stylesheet" href="../../nav.css" />
+    <link rel="stylesheet" href="form.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="../../nav.js"></script>
+</head>
+
+<body>
+    
+    <div id="nav-placeholder">
+    </div>
+    
+    <section id="body">
+        <div id="bigdiv">
+            <div id="maindiv">
+                <h1 id="title">Information Entry</h1><br />
+                <form action="form.php" method="POST" id="form" enctype="multipart/form-data">
+                    <div id="formentry">
+                        <p>
+                            <label for="nameinput">
+                                <span class="question">Your Name:</span>
+                            </label>
+                            <input type="text" name="nameinput" id="nameinput">
+                        </p>
+                        <p>
+                            <label for="cuid">
+                                <span class="question">Your CUID: </span>
+                            </label>
+                            <input type="password" id="cuid" name="cuid">
+                        </p>
+                        <p>
+                            <span class="question">Please check all that apply:</span><br>
+                            <input type="checkbox" id="like_it" name="some_statements[]" value="I really like your Web site.">
+                            <label for="like_it">I really like your Web site.</label><br>
+                            <input type="checkbox" id="the_best" name="some_statements[]" value="It's one of the best sites I've ever seen">
+                            <label for="the_best">It's one of the best sites I've ever seen.</label><br>
+                            <input type="checkbox" id="jealous" name="some_statements[]" value="I sure wish my site looked as good as yours.">
+                            <label for="jealous">I sure wish my site looked as good as yours.</label><br>
+                            <input type="checkbox" id="no_taste" name="some_statements[]" value="I have no taste and I'm pretty dense, so your site didn't do much for me.">
+                            <label for="no_taste">I have no taste and I'm pretty dense, so your site didn't do much for me.</label>
+                        </p>
+                        <p>
+                            <span class="question">Please choose the one thing you love best about my web site:</span><br>
+                            <input type="radio" id="the_picture" name="best_thing" value="The amazing picture.">
+                            <label for="the_picture">That amazing picture of you</label><br>
+                            <input type="radio" id="the_cats" name="best_thing" value="The cat photos.">
+                            <label for="the_cats">All the cat photos, of course</label><br>
+                            <input type="radio" id="the_story" name="best_thing" value="The childhood recap.">
+                            <label for="the_story">The inspiring recap of your suburban childhood</label><br>
+                            <input type="radio" id="the_treasures" name="best_thing" value="The Elvis memorabilia.">
+                            <label for="the_treasures">The detailed list of all your Elvis memorabilia</label>
+                        </p>
+                        <p>
+                            <label for="message">
+                                <span class="question">Feel free to send more praise, gift offers, etc.:</span>
+                            </label><br>
+                            <textarea id="message" name="message" rows="7" cols="55"></textarea>
+                        </p>
+                        <p>
+                            <label for="stars"><span class="question">Choose a rating out of 5 for this site: </span></label>
+                            <select name="stars" id="stars">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="fileupload"><span class="question">Please upload an image that represents how much you love this site:</span></label>
+                            <input type="file" accept=".png,.jpg,.webp,.jpeg,.gif,.pdf" id="fileupload" name="fileupload">
+                        </p>
+                        <p>
+                            <label for="url"><span class="question">Link to your site:</span></label>
+                            <input type="url" id="url" name="url">
+                        </p>
+                    </div>
+                    <input style="font-size: large;" type="submit" value="SUBMIT">
+                    <hr>
+                    <p id="credits">Created By: Dillon Brown, Anthony Morales, Colin Quade</p>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p style="font-size: large;">Form Example</p>
+    </footer>
+    
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("/src/nav3.html");
+        });
+    </script>
+</body>
+
+</html>

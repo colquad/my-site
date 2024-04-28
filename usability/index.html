@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colin Quade Portfolio</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+    </div>
+    <br><br>
+    <h1>Usability Test Results</h1><br>
+    
+    <h2><u>Website that was tested</u></h2>
+    <h3><a href="/collectapp/login.html">Book Collection App</a></h3><br>
+    
+    <h2><u>User Demographics</u></h2>
+    
+    <h3>20 year old, Female, College Student, Accounting Major</h3><br>
+    
+    <h2><u>Tasks</u></h2>
+    
+    <h3>Register for a new account</h3>
+    <p>User was quick to find the link to click for registering a new account as it is written clearly on the login page.</p>
+    <p>Upon clicking, the user found the form very easy to fill out as there were labels for everything.</p>
+    <p>No successful registration message, just goes back to login page.</p><br>
+    
+    <h3>Login to the site with your new account</h3>
+    <p>User was already sent back to the login page, so she easily was able to fill out the form to login and successfully login.</p>
+    <p>After logging in, got sent right to home page of the app.</p><br>
+    
+    <h3>Search for books by George Orwell</h3>
+    <p>User saw the drop down next to the search bar and immediately knew that was the search type, so she selected Author to search by author.</p>
+    <p>Then easily filled out the form to search by typing in "George Orwell" and the results came up successfully.</p><br>
+    
+    <h3>Add 3 books to your favorites</h3>
+    <p>User was hesitant as there is nothing on the screen that explicitly says "Add to favorites".</p>
+    <p>Guessed that you have to click on a book to add it to favorites, and when she clicked a popup came up and that's where she found out how to add to favorites.</p>
+    <p>User was greeted kindly with a success message after adding to favorites, and easily repeated this 2 more times.</p><br>
+    
+    <h3>View your favorites and delete one</h3>
+    <p>There is no favorites tab, only a "My Collection" tab, so the user was a bit confused at first.</p>
+    <p>The user assumed that "My Collection" contained favorites, so she clicked that and successfully went to view her favorites.</p>
+    <p>User felt that the list was a bit unorganized since there is no visual separation between book information.</p>
+    <p>User easily removed a book from favorites by clicking the "Remove from favorites" button, but felt it wasn't the easiest to tell which book she was deleting.</p>
+    <p>User liked that there was a warning asking if you are sure you want to delete the book, and that there was a success message.</p><br>
+    
+    <h3>Log out of the app</h3>
+    <p>User assumed from past experience that the logout button might be in the top right, which it was.</p>
+    <p>User then easily clicked on the logout link and it logged her out successfully.</p><br>
+    
+    <h2><u>Improvements</u></h2>
+    
+    <h3>Usability</h3>
+    <p>Changed wording from "My Collection" to "My Favorites"</p>
+    <p>Added lines between books on favorites list</p>
+	<p>Added text on the homepage with some guidance on how to use the app</p>
+	<p>Added an underline to forgot password and register here so you know where to click/know what's clickable</p><br>
+	
+	<h3>Stylistic</h3>
+	<p>Styling choice just wanted to make all the buttons match</p>
+	
+	<br><br><br>
+    
+    <footer>
+        <p>Colin Quade | <a href="mailto:colinquade@cjquade.com">colinquade@cjquade.com</a></p>
+    </footer>
+    
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("/src/nav2.html");
+        });
+    </script>
+</body>
+</html>

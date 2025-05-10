@@ -1,19 +1,53 @@
 html {
     height: 100%;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: bold;
 }
+
 body {
     margin: 0;
     padding: 0;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #00ffff, #8a2be2);
 }
 
+footer {
+    position: fixed;
+    bottom: 50px;
+    right: 75px;
+    color: white;
+    font-size: 25px;
+    opacity: .75;
+}
+
+#chord-name {
+    font-size: 100px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #ffffff;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
 .piano {
     display: flex;
     position: relative;
+    margin-top: 0px;
     margin-left: 4px;
 }
 
@@ -29,14 +63,14 @@ body {
 }
 
 .white-key.active {
-    background-color: #C0C0C0;
+    background-color: #adadad;
 }
 
 .black-key {
     position: absolute;
     width: 48px;
     height: 160px;
-    background-image: linear-gradient(#000000, #303030);
+    background-image: linear-gradient(black, dimgray);
     border: 3px solid black;
     border-radius: 0 0 2px 2px;
     outline: none;
@@ -44,25 +78,92 @@ body {
 }
 
 .black-key.active {
-    background-image: linear-gradient(#000000, #101010);
+    background-image: none;
+    background-color: black;
 }
 
-.Db-key {
+.Db0-key {
     left: 50px;
 }
 
-.Eb-key {
+.Eb0-key {
     left: 126px;
 }
 
-.Gb-key {
+.Gb0-key {
     left: 278px;
 }
 
-.Ab-key {
+.Ab0-key {
     left: 354px;
 }
 
-.Bb-key {
+.Bb0-key {
     left: 430px;
+}
+
+.Db1-key {
+    left: 582px;
+}
+
+.Eb1-key {
+    left: 658px;
+}
+
+.Gb1-key {
+    left: 810px;
+}
+
+.Ab1-key {
+    left: 886px;
+}
+
+.Bb1-key {
+    left: 962px;
+}
+
+.reset {
+  border: none;
+  padding: 0.8em 2.5em;
+  outline: none;
+  color: white;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background: none;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+.reset:before,
+.reset:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10em;
+  transform: translateX(-50%) translateY(-50%);
+  width: 105%;
+  height: 105%;
+  content: "";
+  z-index: -2;
+  background-size: 400% 400%;
+  background: rgba(169, 169, 169);
+}
+
+.reset:before {
+  -webkit-filter: blur(7px);
+  filter: blur(7px);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-animation: pulse 10s infinite ease;
+  animation: pulse 10s infinite ease;
+}
+
+.reset:after {
+  -webkit-filter: blur(0.3px);
+  filter: blur(0.3px);
+}
+
+.reset:hover:before {
+  width: 115%;
+  height: 115%;
 }
